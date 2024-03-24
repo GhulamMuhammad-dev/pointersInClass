@@ -1,52 +1,98 @@
+// #include<iostream>
+// #include<string>
+// using namespace std;
+
+// class Animal{
+//     private:
+//     string name;
+//     public:
+//     Animal(){};
+//     void setName(string na){
+//         name=na;
+//     }
+
+//     void getName(){
+//         cout<<name<<endl;
+//     }
+
+
+
+
+// };
+
+
+
+
+
+
+
+
+
+
+
+
+
+// int main(){
+//     Animal a1;
+//     Animal a5;
+//     const Animal *a2=&a1;
+//     Animal *const a3_ptr=&a1;
+     
+//    a2=&a5;
+   
+   
+
+
+
+
+//     // a3_ptr=&a2;
+//     a3_ptr->setName("dog");
+
+//     // a2.getName();
+ 
+
+//     cout<<a3_ptr<<endl;
+//     cout<<&a1<<endl;
+//     cout<<&a2<<endl;
+   
+
+
+//     return 0;
+// }
+
+
 #include<iostream>
 #include<string>
 using namespace std;
 
-class Animal{
+
+class Staff{
     private:
-    string name;
+    int * staff_salary;
     public:
-    Animal(){};
-    void setName(string na){
-        name=na;
+    Staff(){};
+    Staff(int staff_salary){
+      this->staff_salary=new int(staff_salary);
     }
 
-    void getName(){
-        cout<<name<<endl;
+    void showSalary(){
+        cout<<*staff_salary<<endl;
+        cout<<staff_salary<<endl;
     }
-
-
-
+   
+   ~Staff(){
+    delete staff_salary;
+   }
 
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
 int main(){
-    Animal a1;
-    Animal a2;
 
-    Animal *const a3_ptr=&a1;
-    // a3_ptr=&a2;
-    a3_ptr->setName("dog");
+  Staff s1(200);
+  s1.showSalary();
+  s1.~Staff();
 
-    // a2.getName();
- 
 
-    cout<<a3_ptr<<endl;
-    cout<<&a1<<endl;
-    cout<<&a2<<endl;
-   
 
 
     return 0;
